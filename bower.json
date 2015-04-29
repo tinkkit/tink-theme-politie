@@ -1,8 +1,8 @@
 {
-  "name": "tink-skeleton-angular",
+  "name": "tink-theme-politie",
   "version": "1.0.0",
   "main": [
-    "dist/tink-skeleton-angular.js"
+    "dist/tink-politie.css"
   ],
   "ignore": [
     ".*",
@@ -13,7 +13,7 @@
     "test",
     "*.sublime-project"
   ],
-  "dependencies": {
+  "devDependencies": {
     "angular": "~1.3.12",
     "angular-resource": "~1.3.12",
     "angular-cookies": "~1.3.12",
@@ -21,11 +21,6 @@
     "angular-animate": "~1.3.12",
     "angular-touch": "~1.3.12",
     "angular-route": "~1.3.12",
-    "jquery": "~2.1.3",
     "tink-core": "latest"
-  },
-  "devDependencies": {
-    "angular-mocks": "~1.3.12",
-    "angular-scenario": "~1.3.12"
   }
 }

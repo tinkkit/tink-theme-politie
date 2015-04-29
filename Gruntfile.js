@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     dist: 'dist',
     version: currentversion,
     module: require('./package.json').name,
-    domain: 'tink.skeleton'
+    domain: 'tink.themepolitie'
   };
 
   // Define the configuration for all the tasks
@@ -269,6 +269,28 @@ module.exports = function (grunt) {
             ]
           }
         ]
+      },
+      sass: {
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>/styles/',
+            dest: '<%= yeoman.dist %>/politie/',
+            src: [
+              '_*'
+            ]
+          },
+          {
+            expand: true,
+            dot: true,
+            cwd: 'bower_components/tink-core/dist/tink/',
+            dest: '<%= yeoman.dist %>/tink/',
+            src: [
+              '_variables.scss'
+            ]
+          }
+        ]
       }
     },
     concat: {
@@ -361,7 +383,8 @@ module.exports = function (grunt) {
         src: [ '{,*/}*.css' ],
         dest: '.tmp/styles',
         options: {
-          baseDir: './src/styles'
+          baseDir: './src/styles',
+          failOnMissingUrl: false
         }
       }
     },
@@ -399,16 +422,17 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'ngtemplates',
+    // 'ngtemplates',
     'replace',
     'copy:dist',
-    'concat',
-    'uglify:dist',
+    // 'concat',
+    // 'uglify:dist',
     'concurrent:dist',
     'autoprefixer',
-    // 'cssUrlEmbed',
+    'cssUrlEmbed',
     'usemin',
     'copy:styles',
+    'copy:sass',
     'cssmin',
     'clean:server'
   ]);
