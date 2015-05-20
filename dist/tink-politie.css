@@ -3323,6 +3323,18 @@ button i {
   color: #474747; }
 
 /**
+ * Stick to top
+ * --------------------------------------------------
+ * Make some elements stick to the top of the viewport
+ */
+.is-sticky {
+  position: fixed;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  width: 100%; }
+
+/**
  * Angular related components
  */
 /**
