@@ -92,9 +92,6 @@
  * Forms
  */
 /**
- * Dropdowns
- */
-/**
  * Z-index, a better implementation
  *
  * Use like this:
@@ -140,7 +137,7 @@
  * Navs
  */
 /**
- * Pagination
+ * Tabs
  */
 /**
  * Tooltips
@@ -150,6 +147,9 @@
  */
 /**
  * Upload
+ */
+/**
+ * Labels
  */
 /**
  * Modals
@@ -165,6 +165,15 @@
  */
 /**
  * Thumbnails
+ */
+/**
+ * Pagination
+ */
+/**
+ * Badges
+ */
+/**
+ * Breadcrumbs
  */
 /**
  * Functions
@@ -1624,6 +1633,7 @@ table td[class*="col-"], table th[class*="col-"] {
 
 @media screen and (max-width: 991px) {
   .table-responsive {
+    background-color: #fff;
     border: 1px solid #bbb;
     margin-bottom: 1.07143rem ;
     -webkit-overflow-scrolling: touch;
@@ -1643,6 +1653,31 @@ table td[class*="col-"], table th[class*="col-"] {
         border-right: 0; }
       .table-responsive > .table-bordered > tbody > tr:last-child > td, .table-responsive > .table-bordered > tbody > tr:last-child > th, .table-responsive > .table-bordered > tfoot > tr:last-child > td, .table-responsive > .table-bordered > tfoot > tr:last-child > th {
         border-bottom: 0; } }
+
+/**
+ * Force responsive table
+ */
+.table-force-responsive {
+  background-color: #fff;
+  border: 1px solid #bbb;
+  margin-bottom: 1.07143rem ;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%; }
+  .table-force-responsive > table {
+    margin-bottom: 0; }
+    .table-force-responsive > table > thead > tr > td, .table-force-responsive > table > thead > tr > th, .table-force-responsive > table > tbody > tr > td, .table-force-responsive > table > tbody > tr > th, .table-force-responsive > table > tfoot > tr > td, .table-force-responsive > table > tfoot > tr > th {
+      white-space: nowrap; }
+  .table-force-responsive > .table-bordered {
+    border: 0; }
+    .table-force-responsive > .table-bordered > thead > tr > td:first-child, .table-force-responsive > .table-bordered > thead > tr > th:first-child, .table-force-responsive > .table-bordered > tbody > tr > td:first-child, .table-force-responsive > .table-bordered > tbody > tr > th:first-child, .table-force-responsive > .table-bordered > tfoot > tr > td:first-child, .table-force-responsive > .table-bordered > tfoot > tr > th:first-child {
+      border-left: 0; }
+    .table-force-responsive > .table-bordered > thead > tr > td:last-child, .table-force-responsive > .table-bordered > thead > tr > th:last-child, .table-force-responsive > .table-bordered > tbody > tr > td:last-child, .table-force-responsive > .table-bordered > tbody > tr > th:last-child, .table-force-responsive > .table-bordered > tfoot > tr > td:last-child, .table-force-responsive > .table-bordered > tfoot > tr > th:last-child {
+      border-right: 0; }
+    .table-force-responsive > .table-bordered > tbody > tr:last-child > td, .table-force-responsive > .table-bordered > tbody > tr:last-child > th, .table-force-responsive > .table-bordered > tfoot > tr:last-child > td, .table-force-responsive > .table-bordered > tfoot > tr:last-child > th {
+      border-bottom: 0; }
 
 @media screen and (max-width: 991px) {
   .table-flip-scroll table {
@@ -2693,6 +2728,78 @@ a.badge:hover, a.badge:focus {
   color: #ff0642; }
 
 /**
+ * Navs
+ * --------------------------------------------------
+ * - Base class
+ * - Tabs
+ */
+/**
+ * Base class
+ */
+.nav-tabs {
+  background-color: transparent;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0; }
+  .nav-tabs:before, .nav-tabs:after {
+    content: " ";
+    display: table; }
+  .nav-tabs:after {
+    clear: both; }
+  .nav-tabs > li {
+    display: block;
+    position: relative; }
+    .nav-tabs > li > a {
+      background: transparent;
+      color: #0a94d6;
+      display: block;
+      padding: 0.42857rem 0.85714rem ;
+      position: relative; }
+      .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+        background: rgba(0, 0, 0, 0.05);
+        color: #0872a5;
+        text-decoration: none; }
+    .nav-tabs > li.active > a {
+      background: transparent;
+      color: #333;
+      cursor: default;
+      font-weight: 600; }
+    .nav-tabs > li.disabled > a {
+      color: #bbb; }
+      .nav-tabs > li.disabled > a:hover, .nav-tabs > li.disabled > a:focus {
+        background-color: transparent;
+        color: #bbb;
+        cursor: not-allowed;
+        text-decoration: none; }
+
+/**
+ * Overrides
+ */
+.nav-lg {
+  background-color: rgba(0, 0, 0, 0.05); }
+  .nav-lg > li > a {
+    padding: 0.85714rem 1.07143rem ; }
+
+/**
+ * Tabs
+ */
+.nav-tabs {
+  border-bottom: 1px solid #bbb;
+  border-top: 1px solid #bbb; }
+  .nav-tabs > li {
+    float: left; }
+    .nav-tabs > li > a {
+      line-height: 1.428571429; }
+
+/**
+ * Tabbable tabs
+ */
+.tab-content > .tab-pane {
+  display: none; }
+.tab-content > .active {
+  display: block; }
+
+/**
  * Modal
  * --------------------------------------------------
  */
@@ -2864,6 +2971,49 @@ html.has-open-modal {
       color: #a90029; }
   .callout-danger hr {
     border-top-color: #ff0642; }
+
+/**
+ * Label
+ * ----------------------------------------------------------------
+ */
+.label, .label-primary, .label-success, .label-info, .label-warning, .label-danger {
+  border: 1px solid #bbb;
+  border-radius: 0.25em;
+  color: #bbb;
+  display: inline;
+  font-size: 75%;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0.2em 0.3em 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  white-space: nowrap; }
+  .label:empty, .label-primary:empty, .label-success:empty, .label-info:empty, .label-warning:empty, .label-danger:empty {
+    display: none; }
+  .btn .label, .btn .label-primary, .btn .label-success, .btn .label-info, .btn .label-warning, .btn .label-danger {
+    position: relative;
+    top: -1px; }
+
+.label-primary {
+  border-color: #233588;
+  color: #233588; }
+
+.label-success {
+  border-color: #00b394;
+  color: #00b394; }
+
+.label-info {
+  border-color: #233588;
+  color: #233588; }
+
+.label-warning {
+  border-color: #f2932e;
+  color: #f2932e; }
+
+.label-danger {
+  border-color: #ff0642;
+  color: #ff0642; }
 
 /**
  * Upload

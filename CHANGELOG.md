@@ -16,6 +16,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.1.0] - 2015-05-26
+
+### Added
+- Added tabbed navigation
+- Added labels
+- Added a version of the responsive table that works in any viewport
+
+### Fixed
+- Fixed a background-color issue with the responsive table
+
+
+
 ## [1.0.4] - 2015-05-20
 
 ### Added
