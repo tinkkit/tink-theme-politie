@@ -16,6 +16,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.2.1] - 2015-06-01
+
+### Fixed
+- Added automatic overflow on sticky divs
+- Fixed erroneous behaviour of floating elements in sticky divs
+- Added new sticky z-index layer
+
+
+
 ## [1.2.0] - 2015-05-29
 
 ### Added
