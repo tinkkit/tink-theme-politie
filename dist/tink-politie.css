@@ -557,6 +557,166 @@ td, th {
  * Core
  */
 /**
+ * Colors
+ * --------------------------------------------------
+ */
+.tink-text-black {
+  color: #000; }
+
+.tink-bg-black {
+  background-color: #000; }
+
+.tink-text-blue {
+  color: #81d4fa; }
+
+.tink-bg-blue {
+  background-color: #81d4fa; }
+
+.tink-text-brand {
+  color: #233588; }
+
+.tink-bg-brand {
+  background-color: #233588; }
+
+.tink-text-brand-light {
+  color: #0a94d6; }
+
+.tink-bg-brand-light {
+  background-color: #0a94d6; }
+
+.tink-text-brown {
+  color: #a1887f; }
+
+.tink-bg-brown {
+  background-color: #a1887f; }
+
+.tink-text-cyan {
+  color: #80deea; }
+
+.tink-bg-cyan {
+  background-color: #80deea; }
+
+.tink-text-danger {
+  color: #ff0642; }
+
+.tink-bg-danger {
+  background-color: #ff0642; }
+
+.tink-text-grass {
+  color: #c5e1a5; }
+
+.tink-bg-grass {
+  background-color: #c5e1a5; }
+
+.tink-text-gray {
+  color: #888; }
+
+.tink-bg-gray {
+  background-color: #888; }
+
+.tink-text-gray-darker {
+  color: #141414; }
+
+.tink-bg-gray-darker {
+  background-color: #141414; }
+
+.tink-text-gray-dark {
+  color: #333; }
+
+.tink-bg-gray-dark {
+  background-color: #333; }
+
+.tink-text-gray-light {
+  color: #bbb; }
+
+.tink-bg-gray-light {
+  background-color: #bbb; }
+
+.tink-text-gray-lighter {
+  color: #eaeaea; }
+
+.tink-bg-gray-lighter {
+  background-color: #eaeaea; }
+
+.tink-text-gray-lightest {
+  color: #f7f7f7; }
+
+.tink-bg-gray-lightest {
+  background-color: #f7f7f7; }
+
+.tink-text-green {
+  color: #a5d6a7; }
+
+.tink-bg-green {
+  background-color: #a5d6a7; }
+
+.tink-text-info {
+  color: #233588; }
+
+.tink-bg-info {
+  background-color: #233588; }
+
+.tink-text-lime {
+  color: #d4e157; }
+
+.tink-bg-lime {
+  background-color: #d4e157; }
+
+.tink-text-orange {
+  color: #ffb74d; }
+
+.tink-bg-orange {
+  background-color: #ffb74d; }
+
+.tink-text-pink {
+  color: #f8bbd0; }
+
+.tink-bg-pink {
+  background-color: #f8bbd0; }
+
+.tink-text-purple {
+  color: #ce93d8; }
+
+.tink-bg-purple {
+  background-color: #ce93d8; }
+
+.tink-text-red {
+  color: #ff8a65; }
+
+.tink-bg-red {
+  background-color: #ff8a65; }
+
+.tink-text-success {
+  color: #00b394; }
+
+.tink-bg-success {
+  background-color: #00b394; }
+
+.tink-text-teal {
+  color: #80cbc4; }
+
+.tink-bg-teal {
+  background-color: #80cbc4; }
+
+.tink-text-warning {
+  color: #f2932e; }
+
+.tink-bg-warning {
+  background-color: #f2932e; }
+
+.tink-text-white {
+  color: #fff; }
+
+.tink-bg-white {
+  background-color: #fff; }
+
+.tink-text-yellow {
+  color: #fff176; }
+
+.tink-bg-yellow {
+  background-color: #fff176; }
+
+/**
  * Grid system
  * --------------------------------------------------
  */
