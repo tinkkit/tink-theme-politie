@@ -1251,8 +1251,9 @@ body {
   color: #333;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem ;
+  height: 100vh;
   line-height: 1.428571429;
-  height: 100vh; }
+  position: relative; }
 
 html.has-alternate-background body {
   background-color: #f7f7f7; }
@@ -2254,7 +2255,8 @@ output {
     color: #333; }
 
 .faux-input .placeholder {
-  color: #bbb; }
+  color: #bbb;
+  height: 2.42857rem ; }
 
 /**
  * Buttons
@@ -2837,7 +2839,7 @@ html.has-open-modal {
   -ms-user-select: none;
   user-select: none;
   width: 100%;
-  z-index: 7; }
+  z-index: 8; }
   .modal:before {
     content: '';
     display: inline-block;
@@ -2898,7 +2900,7 @@ html.has-open-modal {
   position: relative;
   width: 100%; }
   .accordion-toggle:before, .accordion-toggle:after {
-    color: #fff;
+    color: #474747;
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -3284,7 +3286,7 @@ html.has-open-modal {
         border-color: #bbb; }
       .pagination li a:focus {
         border-color: #0a94d6; }
-      @media (max-width: 992px) {
+      @media (max-width: 991px) {
         .pagination li a > span {
           display: none; }
  }
@@ -3493,11 +3495,31 @@ button i {
  * Make some elements stick to the top of the viewport
  */
 .is-sticky {
+  left: 0;
+  overflow: auto;
   position: fixed;
+  right: 0;
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
-  width: 100%; }
+  z-index: 6; }
+
+/**
+ * Fixes when a navigation menu is present
+ */
+@media (min-width: 768px) {
+  .has-nav-left .is-sticky {
+    left: 15.71429rem ; } }
+@media (min-width: 768px) {
+  .has-nav-left.nav-left-can-always-close:not(.nav-left-open) .is-sticky {
+    left: 0; } }
+
+@media (min-width: 768px) {
+  .has-nav-right .is-sticky {
+    right: 15.71429rem ; } }
+@media (min-width: 768px) {
+  .has-nav-right.nav-right-can-always-close:not(.nav-right-open) .is-sticky {
+    right: 0; } }
 
 /**
  * Angular related components
@@ -3744,7 +3766,7 @@ button i {
 html.nav-left-open body, html.nav-right-open body {
   overflow-x: hidden; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   html.nav-left-open .main {
     -webkit-transform: translate(15.71429rem , 0);
     -ms-transform: translate(15.71429rem , 0);
@@ -3756,7 +3778,7 @@ html.nav-left-open body, html.nav-right-open body {
     transform: translate(0, 0); }
  }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   html.nav-right-open .main {
     -webkit-transform: translate(-15.71429rem , 0);
     -ms-transform: translate(-15.71429rem , 0);
@@ -3776,18 +3798,70 @@ html {
   /**
    * If the nav-top for some reason needs to scroll with the page
    */ }
-  @media (min-width: 768px) {
-    html.has-nav-left .main {
-      padding-left: 15.71429rem ; } }
-  @media (min-width: 768px) {
-    html.has-nav-right .main {
-      padding-right: 15.71429rem ; } }
+  html.has-nav-left {
+    /**
+     * If the left nav can always be closed we need some more styling
+     */ }
+    @media (min-width: 768px) {
+      html.has-nav-left .main {
+        padding-left: 15.71429rem ; } }
+    @media (min-width: 768px) {
+      html.has-nav-left.nav-left-can-always-close .main {
+        padding-left: 0; }
+
+      html.has-nav-left.nav-left-can-always-close .nav-left {
+        -webkit-transform: translate(-15.71429rem , 0);
+        -ms-transform: translate(-15.71429rem , 0);
+        transform: translate(-15.71429rem , 0); }
+ }
+    @media (min-width: 768px) {
+      html.has-nav-left.nav-left-can-always-close.nav-left-open .main {
+        padding-left: 15.71429rem ; }
+
+      html.has-nav-left.nav-left-can-always-close.nav-left-open .nav-left {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0); }
+ }
+    @media (min-width: 768px) {
+      html.has-nav-left.nav-left-can-always-close .nav-top-branding > li.toggle {
+        display: block; } }
+  html.has-nav-right {
+    /**
+     * If the right nav can always be closed we need some more styling
+     */ }
+    @media (min-width: 768px) {
+      html.has-nav-right .main {
+        padding-right: 15.71429rem ; } }
+    @media (min-width: 768px) {
+      html.has-nav-right.nav-right-can-always-close .main {
+        padding-right: 0; }
+
+      html.has-nav-right.nav-right-can-always-close .nav-right {
+        -webkit-transform: translate(15.71429rem , 0);
+        -ms-transform: translate(15.71429rem , 0);
+        transform: translate(15.71429rem , 0); }
+ }
+    @media (min-width: 768px) {
+      html.has-nav-right.nav-right-can-always-close.nav-right-open .main {
+        padding-right: 15.71429rem ; }
+
+      html.has-nav-right.nav-right-can-always-close.nav-right-open .nav-right {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0); }
+ }
+    @media (min-width: 768px) {
+      html.has-nav-right.nav-right-can-always-close .nav-top-branding > li.toggle {
+        display: block; } }
   html.has-relative-nav-top .nav-top {
     position: relative; }
 
 .main {
+  position: absolute;
   transition: opacity 0.2s linear, padding 0.1s linear, -webkit-transform 0.1s linear;
   transition: opacity 0.2s linear, padding 0.1s linear, transform 0.1s linear;
+  width: 100%;
   /**
    * ng-animate classes
    */ }
@@ -3813,7 +3887,7 @@ html {
   top: 0;
   transition: height 0.1s linear;
   width: 100%;
-  z-index: 6; }
+  z-index: 7; }
   .nav-top:before, .nav-top:after {
     content: " ";
     display: table; }
@@ -3905,7 +3979,7 @@ html {
             display: none; } }
       .nav-top-branding > li.app {
         padding: 0rem 0.85714rem ; }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           .nav-top-branding > li.app {
             display: none; } }
     .nav-top-branding img {
