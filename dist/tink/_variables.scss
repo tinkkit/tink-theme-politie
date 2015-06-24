@@ -609,7 +609,7 @@ $modal-bgcolor:         $gray-lighter !default;
 
 $panel-bg:                    $white !default;
 $panel-body-padding:          $padding-large-horizontal !default;
-$panel-heading-padding:       $padding-base-horizontal !default;
+$panel-heading-padding:       ($padding-base-horizontal * 2/3) !default;
 $panel-footer-padding:        $panel-heading-padding !default;
 $panel-border-radius:         $border-radius-base !default;
 
@@ -617,9 +617,9 @@ $panel-border-radius:         $border-radius-base !default;
     // $panel-inner-border:          $gray-lighter !default;
     // $panel-footer-bg:             lighten($gray-lighter, 6%) !default;
 
-$panel-default-text:          $white !default;
+$panel-default-text:          $gray-dark !default; // TO BE CLEANED UP  $white !default;
 $panel-default-border:        $gray-lighter !default;
-$panel-default-heading-bg:    lighten($gray-dark, 12) !default;
+$panel-default-heading-bg:    $body-bg-alt; //$gray-lighter !default; // TO BE CLEANED UP lighten($gray-dark, 12) !default;
 $panel-default-icon-color:    $gray !default;
 
 $panel-primary-text:          $white !default;

@@ -2723,24 +2723,19 @@ button[type="submit"], input[type="submit"], .btn-primary {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   margin-bottom: 1.42857rem ; }
   .panel .panel-heading, .accordion-panel .panel-heading, .panel .accordion-panel-heading, .accordion-panel .accordion-panel-heading {
-    color: #474747;
-    background-color: #e0e0e0;
-    border-color: #eaeaea;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px; }
+    color: #333;
+    background-color: #f7f7f7;
+    border-color: #eaeaea; }
     .panel .panel-heading + .panel-collapse > .panel-body, .accordion-panel .panel-heading + .panel-collapse > .panel-body, .panel .accordion-panel-heading + .panel-collapse > .panel-body, .accordion-panel .accordion-panel-heading + .panel-collapse > .panel-body, .panel .panel-heading + .panel-collapse > .accordion-panel-body, .accordion-panel .panel-heading + .panel-collapse > .accordion-panel-body, .panel .accordion-panel-heading + .panel-collapse > .accordion-panel-body, .accordion-panel .accordion-panel-heading + .panel-collapse > .accordion-panel-body {
       border-top-color: #eaeaea; }
     .panel .panel-heading .badge, .accordion-panel .panel-heading .badge, .panel .accordion-panel-heading .badge, .accordion-panel .accordion-panel-heading .badge {
-      color: #e0e0e0;
-      background-color: #474747; }
+      color: #f7f7f7;
+      background-color: #333; }
   .panel .panel-footer + .panel-collapse > .panel-body, .accordion-panel .panel-footer + .panel-collapse > .panel-body, .panel .panel-footer + .panel-collapse > .accordion-panel-body, .accordion-panel .panel-footer + .panel-collapse > .accordion-panel-body {
     border-bottom-color: #eaeaea; }
-  .panel.colored, .colored.accordion-panel {
-    background: #bcc5ee;
-    border: none; }
 
 .panel-body, .accordion-panel-body {
-  padding: 1.14286rem 2.28571rem ; }
+  padding: 1.14286rem ; }
   .panel-body:before, .accordion-panel-body:before, .panel-body:after, .accordion-panel-body:after {
     content: " ";
     display: table; }
@@ -2748,40 +2743,22 @@ button[type="submit"], input[type="submit"], .btn-primary {
     clear: both; }
   .panel-body:not(:last-child), .accordion-panel-body:not(:last-child) {
     border-bottom: 1px solid #eaeaea; }
-  .panel-body .panel-body-title, .accordion-panel-body .panel-body-title {
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 1rem; }
-    .panel-body .panel-body-title span, .accordion-panel-body .panel-body-title span {
-      font-size: 70%;
-      color: #888; }
-  .panel-body .panel-body-section-title, .accordion-panel-body .panel-body-section-title {
-    border-bottom: 1px solid #eaeaea;
-    font-weight: 300;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem; }
-    .panel-body .panel-body-section-title span, .accordion-panel-body .panel-body-section-title span {
-      font-size: 70%; }
-  .panel-body .panel-body, .accordion-panel-body .panel-body, .panel-body .accordion-panel-body, .accordion-panel-body .accordion-panel-body {
-    padding: 1.14286rem ; }
-    .panel-body .panel-body.has-no-padding, .accordion-panel-body .panel-body.has-no-padding, .panel-body .has-no-padding.accordion-panel-body, .accordion-panel-body .has-no-padding.accordion-panel-body {
-      padding: 0; }
   .panel-body.has-no-padding, .has-no-padding.accordion-panel-body {
     padding: 0; }
 
 .panel-heading, .accordion-panel-heading {
-  background-color: #f6f6f6;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   font-size: 1.14286rem ;
   font-weight: 700;
-  padding: 0.85714rem 1.28571rem ; }
+  padding: 0.57143rem 1.14286rem ; }
   .panel-heading > .dropdown .dropdown-toggle, .accordion-panel-heading > .dropdown .dropdown-toggle {
     color: inherit; }
   .panel-heading .fa, .accordion-panel-heading .fa {
-    color: #474747; }
+    color: #888; }
   .panel-heading .panel-title, .accordion-panel-heading .panel-title {
     background: none;
-    color: #474747;
+    color: #333;
     display: inline-block;
     font-size: 1rem ;
     font-weight: 700;
@@ -2789,11 +2766,15 @@ button[type="submit"], input[type="submit"], .btn-primary {
     padding: 0; }
   .panel-heading .fa + .panel-title, .accordion-panel-heading .fa + .panel-title {
     margin-left: 0.64286rem ; }
+  .panel-heading [class^="badge"] + .panel-title, .accordion-panel-heading [class^="badge"] + .panel-title {
+    margin-left: 0.64286rem ; }
+  .panel-heading .panel-title + [class^="badge"], .accordion-panel-heading .panel-title + [class^="badge"] {
+    margin-left: 0.64286rem ; }
 
 .panel-footer {
   border-top: 1px solid #eaeaea;
   font-size: 0.85714rem ;
-  padding: 0.85714rem 1.28571rem ; }
+  padding: 0.57143rem 0.85714rem ; }
 
 /**
  * Breadcrumbs
@@ -3040,18 +3021,22 @@ html.has-open-modal {
   .accordion-panel > a {
     text-decoration: none; }
     .accordion-panel > a:hover .accordion-toggle {
-      background-color: #d4d4d4;
+      background-color: #eaeaea;
       transition: background 0.1s linear; }
-  .accordion-panel.group-open .accordion-toggle:before {
+  .accordion-panel.group-open > .accordion-toggle:before {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg); }
-  .accordion-panel.group-loading .accordion-toggle:before {
+  .accordion-panel.group-loading > .accordion-toggle:before {
     opacity: 0; }
-  .accordion-panel.group-loading .accordion-toggle:after {
+  .accordion-panel.group-loading > .accordion-toggle:after {
     -webkit-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;
     content: "\f021"; }
+
+.accordion-panel-heading:hover, .accordion-panel-heading :focus, .accordion-panel-heading :active {
+  background-color: #eaeaea;
+  transition: background 0.1s linear; }
 
 .accordion-toggle {
   cursor: pointer;
@@ -3060,7 +3045,7 @@ html.has-open-modal {
   position: relative;
   width: 100%; }
   .accordion-toggle:before, .accordion-toggle:after {
-    color: #474747;
+    color: #333;
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -3071,7 +3056,7 @@ html.has-open-modal {
     right: 1rem ;
     text-align: center;
     text-decoration: inherit;
-    top: 0.85714rem ;
+    top: 0.67857rem ;
     transition: color 0.1s linear, -webkit-transform 0.1s linear;
     transition: color 0.1s linear, transform 0.1s linear;
     z-index: 2; }
@@ -3079,7 +3064,7 @@ html.has-open-modal {
     content: '';
     font-size: 14px;
     right: 0.92857rem ;
-    top: 0.92857rem ;
+    top: 0.78571rem ;
     z-index: 1; }
 
 .accordion-panel-body {
@@ -3640,14 +3625,14 @@ button i {
  * --------------------------------------------------
  */
 .table-alternative-heading > thead > tr > th {
-  background-color: #e0e0e0;
+  background-color: #f7f7f7;
   border-bottom: 0;
-  color: #474747;
+  color: #333;
   transition: background-color linear 0.1s; }
 
 .table-alternative-heading.table-interactive > thead > tr > th:hover {
-  background-color: #d4d4d4;
-  color: #474747; }
+  background-color: #eaeaea;
+  color: #333; }
 
 /**
  * Stick to top
@@ -3923,8 +3908,10 @@ button i {
 /**
  * HTML behaviour when side navigation is open
  */
-html.nav-left-open body, html.nav-right-open body {
-  overflow-x: hidden; }
+@media (max-width: 767px) {
+  html.nav-left-open body, html.nav-right-open body {
+    overflow-x: hidden; }
+ }
 
 @media (max-width: 767px) {
   html.nav-left-open .main {
