@@ -1,6 +1,6 @@
 {
   "name": "tink-theme-politie",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "main": [
     "dist/tink-politie.css"
   ],
