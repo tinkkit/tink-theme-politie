@@ -16,6 +16,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.5.2] - 2015-07-08
+
+### Added
+- Added tooltip styling
+- Added new stylings to bar list items
+
+
+
 ## [1.5.1] - 2015-06-26
 
 ### Changed
