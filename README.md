@@ -1,6 +1,6 @@
 # Tink Politie theme
 
-v1.5.3
+v1.5.4
 
 ## What is this repository for?
 
