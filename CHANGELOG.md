@@ -16,6 +16,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.5.5] - 2015-08-13
+
+### Changed
+- Upgraded to Font Awesome 4.4
+
+### Fixed
+- Fixed miscellaneous styling issues
+- Fixed hardcoded breakpoint
+
+
+
 ## [1.5.4] - 2015-07-14
 
 ### Changed

@@ -1,5 +1,5 @@
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 /**
  * Tink Politie theme
  */
@@ -2774,9 +2774,9 @@ button[type="submit"], input[type="submit"], .btn-primary {
     margin-left: 0.64286rem ; }
 
 .panel-footer {
+  background: #f7f7f7;
   border-top: 1px solid #eaeaea;
-  font-size: 0.85714rem ;
-  padding: 0.57143rem 0.85714rem ; }
+  padding: 0.57143rem 1.14286rem ; }
 
 /**
  * Breadcrumbs
@@ -3027,6 +3027,8 @@ html.has-open-modal {
     .accordion-panel:first-child .panel-heading, .accordion-panel:first-child .accordion-panel-heading {
       border-top-right-radius: 3px;
       border-top-left-radius: 3px; }
+  .accordion-panel:not(:first-child) {
+    border-top: none; }
   .accordion-panel:last-child {
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px; }
@@ -3039,6 +3041,9 @@ html.has-open-modal {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg); }
+  .accordion-panel.group-open:last-child .panel-heading, .accordion-panel.group-open:last-child .accordion-panel-heading {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
   .accordion-panel.group-loading > .accordion-toggle:before {
     opacity: 0; }
   .accordion-panel.group-loading > .accordion-toggle:after {
@@ -3847,7 +3852,7 @@ button i {
   border: 1px solid #fff06c;
   border-radius: 3px;
   box-sizing: border-box;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
   color: #333;
   display: block;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3855,7 +3860,7 @@ button i {
   font-weight: normal;
   line-height: 1.428571429;
   max-width: 14.28571rem ;
-  padding: 6px 12px;
+  padding: 3px 8px;
   position: relative;
   text-decoration: none;
   white-space: normal;
@@ -3980,7 +3985,7 @@ body:before {
     content: "tablet-view"; }
  }
 
-@media (min-width: 1600px) {
+@media (min-width: 1200px) {
   body:before {
     content: "wide-xl-view"; }
  }
