@@ -16,6 +16,29 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.6.0] - 2015-09-21
+
+### Added
+- Added an arrow component and applied it to the popover and tooltip component
+- Added a basic loader
+- Added buttons with a transparent background
+
+### Changed
+- Refactored the bar component to support flex properties
+- Labels are not bold by default anymore
+- Tweaked the default styling of some form elements
+- Added possibility to right-align the datepicker
+
+### Deprecated
+- Deprecated the panel component in favour of the card component (panel code will be dropped in the next release)
+
+### Fixed
+- Fixed a bug where in Firefox the select element had to be clicked twice before it would open
+- Fixed an overflow issue in the modal dialog
+- Fixed a datepicker layout issue when used inside a modal dialog
+
+
+
 ## [1.5.5] - 2015-08-13
 
 ### Changed
