@@ -95,6 +95,13 @@ $hit-area-checked-bgcolor:               $brand-light;
 
 
 /**
+ * Interactive table
+ */
+$table-interactive-hoverable-row-bgcolor:    lighten($brand, 62%);
+$table-interactive-selected-row-bgcolor:     lighten($brand, 60%);
+
+
+/**
  * Pagination
  */
 $pagination-link-active-bg:              $brand-light;

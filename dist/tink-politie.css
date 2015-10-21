@@ -47,6 +47,9 @@
  * Panels
  */
 /**
+ * Interactive table
+ */
+/**
  * Pagination
  */
 /**
@@ -1809,7 +1812,7 @@ table {
   .table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
     border-bottom-width: 2px; }
 
-.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
   background-color: #f9f9f9; }
 
 table col[class*="col-"] {
@@ -2479,11 +2482,6 @@ button, input[type="button"], .btn, button[type="submit"], input[type="submit"],
     pointer-events: none; }
   button.btn-text .fa, input.btn-text[type="button"] .fa, .btn-text.btn .fa, input.btn-text[type="submit"] .fa, .btn-text.btn-primary .fa {
     margin-right: 0.57143rem ; }
-  button .loader, input[type="button"] .loader, .btn .loader, input[type="submit"] .loader, .btn-primary .loader, button .table-interactive.is-loading:after, input[type="button"] .table-interactive.is-loading:after, .btn .table-interactive.is-loading:after, input[type="submit"] .table-interactive.is-loading:after, .btn-primary .table-interactive.is-loading:after {
-    height: 1em;
-    line-height: 1em;
-    top: 0.14286rem ;
-    width: 1em; }
 
 /**
  * Default buttons
@@ -2728,14 +2726,15 @@ button[type="submit"], input[type="submit"], .btn-primary {
     border-top-right-radius: 3px; }
 
 .card-body, .accordion-panel-body {
+  border-bottom: 1px solid #eaeaea;
   padding: 1.14286rem ; }
   .card-body:before, .accordion-panel-body:before, .card-body:after, .accordion-panel-body:after {
     content: " ";
     display: table; }
   .card-body:after, .accordion-panel-body:after {
     clear: both; }
-  .card-body:not(:last-child), .accordion-panel-body:not(:last-child) {
-    border-bottom: 1px solid #eaeaea; }
+  .card-body:last-child, .accordion-panel-body:last-child {
+    border-bottom: none; }
   .card-body.has-no-padding, .has-no-padding.accordion-panel-body {
     padding: 0; }
 
@@ -3004,8 +3003,10 @@ html.has-open-modal {
 /**
  * Loader
  * --------------------------------------------------
+ * To do: give the loader a decent fallback for IE9.
+ * Check the comment signs at the end of the lines below.
  */
-.loader, .table-interactive.is-loading:after {
+.loader, .loader-lg, .table-interactive.is-loading:after {
   -webkit-animation: spin 0.7s infinite linear, loader-color 2.8s infinite linear;
   animation: spin 0.7s infinite linear, loader-color 2.8s infinite linear;
   -webkit-backface-visibility: hidden;
@@ -3026,14 +3027,12 @@ html.has-open-modal {
     height: 2.57143rem ;
     width: 2.57143rem ; }
 
-/**
- * Loader in a button
- * -> check _buttons.scss
- */
-/**
- * To do: give the loader a decent fallback for IE9.
- * Check the comment signs at the end of the lines above.
- */
+span.loader, span.loader-lg, span.table-interactive.is-loading:after, span.loader-lg, span.table-interactive.is-loading:after {
+  height: 1em;
+  line-height: 1em;
+  top: 0.125em;
+  width: 1em; }
+
 /**
  * Callout
  * --------------------------------------------------
@@ -3301,7 +3300,7 @@ html.has-open-modal {
     animation: spin 1s linear infinite;
     content: "\f021"; }
 
-.accordion-panel-heading:hover, .accordion-panel-heading :focus, .accordion-panel-heading :active {
+.accordion-panel-heading:hover, .accordion-panel-heading:active, .accordion-panel-heading:focus {
   background-color: #ededed;
   transition: background 0.1s linear; }
 .accordion-panel-heading .card-title, .accordion-panel-heading .panel-title {
@@ -3354,13 +3353,14 @@ html.has-open-modal {
  * - range
  */
 .datepicker-input-fields {
+  min-width: 7.85714rem ;
   position: relative; }
   .datepicker-input-fields .datepicker-icon {
     right: 1px;
     z-index: 2; }
   .datepicker-input-fields .faux-input {
-    min-width: 8.57143rem ;
     position: relative;
+    overflow-y: visible;
     text-align: left; }
     .datepicker-input-fields .faux-input:focus {
       z-index: 1; }
@@ -3666,8 +3666,15 @@ html.has-open-modal {
     content: '\f0dd'; }
   .table-interactive th.is-sortable.sort-desc:after {
     content: '\f0de'; }
-.table-interactive tr.is-selected {
-  background-color: #e8f5e9; }
+.table-interactive > tbody > tr > td, .table-interactive > tbody > tr > th {
+  transition: background-color 0.1s linear, color 0.1s linear; }
+.table-interactive > tbody > tr.is-hoverable:hover > td, .table-interactive > tbody > tr.is-hoverable:hover > th, .table-interactive > tbody > tr.is-hoverable:active > td, .table-interactive > tbody > tr.is-hoverable:active > th, .table-interactive > tbody > tr.is-hoverable:focus > td, .table-interactive > tbody > tr.is-hoverable:focus > th {
+  background-color: #edeffa !important;
+  color: #333 !important;
+  cursor: pointer; }
+.table-interactive > tbody > tr.is-selected > td, .table-interactive > tbody > tr.is-selected > th {
+  background-color: #e5e8f8 !important;
+  color: #333 !important; }
 
 /**
  * Action styling
@@ -3776,16 +3783,6 @@ html.has-open-modal {
 /**
  * Table alternative heading -> this will be added to the table css when finished
  */
-.table-alternative-heading > thead > tr > th {
-  background-color: #f7f7f7;
-  border-bottom: 0;
-  color: #333;
-  transition: background-color linear 0.1s; }
-
-.table-alternative-heading.table-interactive > thead > tr > th:hover {
-  background-color: #eaeaea;
-  color: #333; }
-
 /**
  * Navigation
  * --------------------------------------------------
@@ -4216,7 +4213,6 @@ html {
   line-height: 1.428571429;
   padding: 0.42857rem ;
   position: relative;
-  transition: bottom 0.1s linear, left 0.1s linear, right 0.1s linear, top 0.1s linear;
   white-space: normal;
   z-index: 5; }
   .popover.arrow-top:before {
@@ -4379,6 +4375,8 @@ html {
     border-bottom: 11px transparent solid; }
   .popover.arrow-left-bottom:before, .popover.arrow-left-bottom:after {
     bottom: 16px; }
+  .popover-animation {
+    transition: bottom 0.1s linear, left 0.1s linear, right 0.1s linear, top 0.1s linear; }
   .popover-header {
     margin: 0.42857rem 0rem 0.85714rem ;
     text-align: center; }
