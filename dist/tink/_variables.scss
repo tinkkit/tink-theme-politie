@@ -75,6 +75,7 @@ $gray-dark:             #333 !default;
 $gray:                  #888 !default;
 $gray-light:            #bbb !default;
 $gray-lighter:          #eaeaea !default;
+$gray-lightest:         #f7f7f7 !default;
 
 $brand:                 #347ea6 !default; // Digipolis dark blue - was #698ab2
 $brand-light:           #5fb1d6 !default; // Digipolis light blue - was #264a7a
@@ -86,7 +87,7 @@ $brand-danger:          #e60038 !default; // red
 
 // Settings for some of the most global styles.
 $body-bg:               $white !default;
-$body-bg-alt:           #f7f7f7 !default;
+$body-bg-alt:           $gray-lightest !default;
 $text-color:            $gray-dark !default;
 $link-color:            $brand-light !default;
 $link-hover-color:      darken($link-color, 10%) !default;
@@ -330,24 +331,40 @@ $input-group-addon-border-color: $input-border !default; // Border color for tex
 
 /**
  * Z-index, a better implementation
+ * http://www.sitepoint.com/better-solution-managing-z-index-sass/
  *
  * Use like this:
  *   z-index: layer("popover");
  *     where popover is a list item of the default list "$layers" (see below)
- *   or
- *   z-index: layer("popover", $other-layers);
- *     where popover is a list item of a custom list named "$other-layers"
  *
- * Current layer list
- * z-index: -1  // cellar
- * z-index: 0   // ground
- * z-index: 1   // base => here's where $layers start
+ * The list is also upgradeable in that nesting is permitted, e.g.:
+ * $z-layers: (
+ *   'modal': (
+ *     'back': 50,
+ *     'front': 60
+ *   ),
+ *   'nav-top': 49,
+ *   ...
+ * )
  *
  * Complete layer list (for reference, add these to $layers only if needed)
  * $layers: base, navbar, dropdown, tooltip, navbar-sticky, navbar-fixed, modal-background, modal, popover;
+ * Old layer list
+ * $layers: base, pseudo, above-pseudo, nav-aside, popover, sticky, nav-top, modal !default;
  */
-$layers: base, pseudo, above-pseudo, nav-aside, popover, sticky, nav-top, modal !default;
 
+$z-layers: (
+  'modal':        20,
+  'nav-top':      19,
+  'sticky':       18,
+  'popover':      5,
+  'nav-aside':    4,
+  'above-pseudo': 3,
+  'pseudo':       2,
+  'base':         1,
+  'ground':       0,
+  'cellar':       -1
+);
 
 
 /**
@@ -812,9 +829,38 @@ $breadcrumb-separator-size:     $breadcrumb-font-size * .6 !default;
 
 
 /**
+ * Filter bar
+ */
+$filter-bar-padding: $padding-base-vertical !default;
+$filter-bar-border-radius: $border-radius-base !default;
+$filter-bar-padding-horizontal: 6px !default;
+$filter-bar-item-margin: 0 ($filter-bar-padding-horizontal/2) $filter-bar-padding-horizontal 0 !default;
+$filter-bar-item-padding: $padding-base-vertical $padding-base-horizontal !default;
+
+$filter-bar-bgcolor: $gray-lightest !default;
+$filter-bar-border: $gray-light !default;
+
+
+
+/**
  * Loader
  */
 
 $loader-color: rgba($brand, .8) !default;
 $loader-color-alt: rgba($brand-light, .8) !default;
 $loader-border-width: 2px !default;
+
+
+
+/**
+ * Variables
+ */
+$timeline-padding: 20px !default;
+$timeline-border-radius: $border-radius-base !default;
+$timeline-line-color: $brand-light !default;
+$timeline-label-color: $white !default;
+$timeline-label-bgcolor: $brand-light !default;
+$timeline-card-offset: 24px !default;
+$timeline-date-color: $brand-light !default;
+$timeline-date-bgcolor: $white !default;
+$timeline-date-border: $brand-light !default;
