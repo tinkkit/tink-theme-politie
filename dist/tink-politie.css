@@ -1658,14 +1658,14 @@ ul, ol {
   margin-bottom: 0.71429rem ;
   margin-top: 0; }
 
-.list-unstyled, .list-inline, .bar > ul, .nav-top > ul, .pagination, .hit-area-box, .timeline-list, .table-interactive-cols, .nav-aside ul, .popover-menu-list ul, .upload-files, .dragenter {
+.list-unstyled, .list-inline, .bar > ul, .nav-top > ul, .hit-area-box, .timeline-list, .table-interactive-cols, .nav-aside ul, .popover-menu-list ul, .upload-files, .dragenter {
   list-style: none;
   margin-bottom: 0;
   padding-left: 0; }
 
-.list-inline, .bar > ul, .nav-top > ul, .pagination {
+.list-inline, .bar > ul, .nav-top > ul {
   margin-left: -0.42857rem ; }
-  .list-inline > li, .bar > ul > li, .nav-top > ul > li, .pagination > li {
+  .list-inline > li, .bar > ul > li, .nav-top > ul > li {
     display: inline-block;
     padding-left: 0.42857rem ;
     padding-right: 0.42857rem ; }
@@ -2353,9 +2353,10 @@ output {
 .form-group {
   margin-bottom: 1.07143rem ; }
 
-@media (min-width: 992px) {
-  .form-horizontal label {
-    margin-top: 0.5rem ; }
+@media (min-width: 768px) {
+  .form-horizontal [class*="col-sm"]:not([class*="col-sm-12"]) label {
+    margin-top: 1px;
+    padding-top: 0.42857rem ; }
  }
 
 /**
@@ -2429,20 +2430,6 @@ output {
  * Inspired by lack of control now and the way so many others do it, esp. looking at Semantic UI atm.
  * TH
 */
-.input-inline {
-  float: left;
-  width: auto; }
-
-.select-box-inline {
-  display: inline-block;
-  margin-left: 0.57143rem ; }
-  .select-box-inline select {
-    padding-right: 24px; }
-
-.checkbox-inline {
-  display: inline-block;
-  margin-left: 0.57143rem ; }
-
 .btn.search-submit, a.search-submit.filter-bar-item {
   background: none;
   border: none;
@@ -2458,6 +2445,16 @@ output {
 .faux-input .placeholder {
   color: #bbb;
   height: 2.42857rem ; }
+
+.form-force-inline .checkbox, .form-force-inline .faux-input, .form-force-inline .radio, .form-force-inline .select, .form-force-inline .form-group, .form-force-inline input, .form-force-inline label, .form-force-inline select, .form-force-inline textarea {
+  display: inline-block;
+  width: auto; }
+
+@media (min-width: 768px) {
+  .form-inline .checkbox, .form-inline .faux-input, .form-inline .radio, .form-inline .select, .form-inline .form-group, .form-inline input, .form-inline label, .form-inline select, .form-inline textarea {
+    display: inline-block;
+    width: auto; }
+ }
 
 /**
  * Buttons
@@ -2909,7 +2906,7 @@ a.badge:hover, a.badge:focus {
  * Base class
  */
 .nav-tabs {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.05);
   list-style: none;
   margin-bottom: 0;
   padding-left: 0; }
@@ -2932,7 +2929,7 @@ a.badge:hover, a.badge:focus {
         color: #0872a5;
         text-decoration: none; }
     .nav-tabs > li.active > a {
-      background: transparent;
+      background: #fff;
       color: #333;
       cursor: default;
       font-weight: 600; }
@@ -2947,10 +2944,8 @@ a.badge:hover, a.badge:focus {
 /**
  * Overrides
  */
-.nav-lg {
-  background-color: rgba(0, 0, 0, 0.05); }
-  .nav-lg > li > a {
-    padding: 0.85714rem 1.07143rem ; }
+.nav-lg > li > a {
+  padding: 0.85714rem 1.07143rem ; }
 
 /**
  * Tabs
@@ -3616,7 +3611,7 @@ a.filter-bar-link-external {
     border: 1px solid transparent;
     color: #888;
     min-width: 20px;
-    padding: 0.42857rem 0rem ;
+    padding: 0.14286rem ;
     width: 100%; }
     @media (min-width: 992px) {
       .datepicker .btn, .datepicker a.filter-bar-item, .datepickerrange .btn, .datepickerrange a.filter-bar-item {
@@ -3679,7 +3674,7 @@ a.filter-bar-link-external {
       color: #000; }
 
 .datepicker {
-  padding: 1.5%;
+  padding: 0.85714rem ;
   position: absolute;
   width: 18.57143rem ; }
   .datepicker.aligns-right {
@@ -3698,10 +3693,12 @@ a.filter-bar-link-external {
       min-width: 640px; } }
 
 .datepicker-days th {
-  padding-bottom: 0.71429rem ; }
+  border-bottom: 0.28571rem  solid #fff;
+  padding: 0.28571rem 0rem ;
+  background-color: #f7f7f7; }
 
 .datepickerrange-header-left, .datepickerrange-header-right {
-  line-height: 2.14286rem ;
+  line-height: 1.71429rem ;
   overflow: hidden;
   padding: 0.14286rem ; }
 
@@ -3713,16 +3710,19 @@ a.filter-bar-link-external {
       padding: 1.5% 2.5%;
       width: 50%; } }
 
-/**
- * Pagination
- * --------------------------------------------------
- */
+.datepicker-nav {
+  border-bottom: 0.71429rem  solid #fff; }
+
+.selects-current-date {
+  border-top: 0.71429rem  solid #fff; }
+  .selects-current-date > tr {
+    text-align: center; }
+    .selects-current-date > tr button {
+      padding: 0.14286rem 0.57143rem ; }
+
 .table-sort-options {
   overflow: auto; }
 
-/**
- * Left
- */
 .table-sort-info {
   display: block;
   margin: 1.42857rem 0.57143rem 1.42857rem 0rem ;
@@ -3752,79 +3752,21 @@ a.filter-bar-link-external {
   @media (min-width: 992px) {
     .table-sort-pagination {
       float: right; } }
-
-.pagination {
-  display: inline-block;
-  margin: 0; }
-  .pagination li {
-    display: none;
-    padding: 0;
-    position: relative; }
-    @media (min-width: 768px) {
-      .pagination li {
-        display: inline; } }
-    .pagination li.prev, .pagination li.next, .pagination li.active {
-      display: inline; }
-    .pagination li a, .pagination li > span {
-      background-color: #fff;
-      border: 1px solid #bbb;
-      float: left;
-      margin-left: -1px;
-      min-width: 2.14286rem ;
-      padding: 0.2381rem 0.47619rem ;
-      text-decoration: none;
-      z-index: 1; }
-    .pagination li a {
-      color: #333;
-      position: relative; }
-      .pagination li a:hover, .pagination li a:active, .pagination li a:focus {
-        color: #0872a5;
-        background-color: rgba(0, 0, 0, 0.05);
-        z-index: 2; }
-      .pagination li a:hover, .pagination li a:active {
-        border-color: #bbb; }
-      .pagination li a:focus {
-        border-color: #0a94d6; }
-      @media (max-width: 991px) {
-        .pagination li a > span {
-          display: none; }
- }
-    .pagination li > span {
-      color: #888; }
-    .pagination li:first-child a, .pagination li:first-child > span {
-      border-bottom-left-radius: 3px;
-      border-top-left-radius: 3px;
-      margin-left: 0; }
-    .pagination li:last-child a, .pagination li:last-child > span {
-      border-bottom-right-radius: 3px;
-      border-top-right-radius: 3px; }
-    .pagination li.active a {
-      background-color: #0a94d6;
-      border-color: #0a94d6;
-      color: #fff;
-      cursor: default;
-      z-index: 3; }
-    .pagination li.disabled a, .pagination li.disabled a:hover, .pagination li.disabled a:active, .pagination li.disabled a:focus {
-      background-color: #fff;
-      border-color: #d4d4d4;
-      color: #bbb;
-      cursor: not-allowed;
-      z-index: 0; }
-    .pagination li.prev a:before {
-      content: ' \f104';
-      font-family: 'FontAwesome';
-      line-height: 1.428571429; }
-      @media (min-width: 992px) {
-        .pagination li.prev a:before {
-          float: left;
-          margin: 0rem 0.57143rem 0rem 0rem ; } }
-    .pagination li.next a:after {
-      content: ' \f105';
-      font-family: 'FontAwesome'; }
-      @media (min-width: 992px) {
-        .pagination li.next a:after {
-          float: right;
-          margin: 0rem 0rem 0rem 0.35714rem ; } }
+  .table-sort-pagination .btn:hover, .table-sort-pagination a.filter-bar-item:hover, .table-sort-pagination .btn:active, .table-sort-pagination a.filter-bar-item:active, .table-sort-pagination .btn:focus, .table-sort-pagination a.filter-bar-item:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #0872a5; }
+  .table-sort-pagination .btn.active, .table-sort-pagination a.active.filter-bar-item {
+    background-color: #0a94d6;
+    border-color: #0a94d6;
+    color: #fff;
+    cursor: default; }
+  .table-sort-pagination .prev:before, .table-sort-pagination .next:after {
+    font-family: 'FontAwesome';
+    line-height: 1; }
+  .table-sort-pagination .prev:before {
+    content: '\f104  '; }
+  .table-sort-pagination .next:after {
+    content: ' \f105'; }
 
 /**
  * Table interactive

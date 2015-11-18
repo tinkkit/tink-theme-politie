@@ -456,6 +456,9 @@ $datepicker-btn-hover-color:                          $brand !default;
 $datepicker-btn-hover-bg-color:                       rgba($black, .07) !default;
 $datepicker-btn-hover-border-color:                   $datepicker-btn-border-color !default;
 
+$datepicker-padding:                                  12px !default;
+$datepicker-btn-padding:                              2px !default;
+
 $datepicker-btn-selected-color:                       $white !default;
 $datepicker-btn-selected-bg-color:                    $brand !default;
 $datepicker-btn-selected-border-color:                $datepicker-btn-border-color !default;
@@ -485,6 +488,12 @@ $datepicker-btn-today-border-color:                   lighten($datepicker-btn-to
 $datepicker-btn-today-hover-color:                    darken($datepicker-btn-today-color, 8%) !default;
 $datepicker-btn-today-hover-bg-color:                 darken($datepicker-btn-today-bg-color, 8%) !default;
 $datepicker-btn-today-hover-border-color:             $datepicker-btn-today-border-color !default;
+
+
+$datepicker-days-bg-color:                            $gray-lightest !default;
+$datepicker-days-padding-vertical:                    4px !default;
+
+$datepicker-nav-padding:                              10px !default;
 
 
 
@@ -529,7 +538,7 @@ $hit-area-checked-bgcolor       : $brand !default;
 /**
  * Navs
  */
-$nav-bgcolor:                               transparent !default;
+$nav-bgcolor:                               rgba(0, 0, 0, .05) !default;
 
 $nav-link-padding:                          $padding-base-vertical $padding-base-horizontal !default;
 $nav-link-hover-bg:                         $gray-lighter !default;
@@ -538,12 +547,11 @@ $nav-link-bgcolor:                          transparent !default;
 $nav-link-hover-color:                      $link-hover-color !default;
 $nav-link-hover-bgcolor:                    rgba(0, 0, 0, .05) !default;
 $nav-link-active-color:                     $gray-dark !default;
-$nav-link-active-bgcolor:                   transparent !default;
+$nav-link-active-bgcolor:                   $white !default;
 
 $nav-disabled-link-color:                   $gray-light !default;
 $nav-disabled-link-hover-color:             $gray-light !default;
 
-$nav-lg-bgcolor:                            rgba(0, 0, 0, .05) !default;
 $nav-lg-link-padding:                       ($padding-base-vertical * 2) ($padding-base-horizontal * 1.25) !default;
 
 /**
@@ -735,23 +743,23 @@ $thumbnail-border-radius:     $border-radius-base !default;
 $pagination-padding-horizontal:   $padding-small-horizontal * 2/3 !default;
 $pagination-padding-vertical:     $padding-small-vertical * 2/3 !default;
 
-$pagination-color:                $gray !default;
+// $pagination-color:                $gray !default;
 
-$pagination-link-color:           $text-color !default;
-$pagination-link-bg:              $white !default;
-$pagination-link-border:          $input-border !default;
+// $pagination-link-color:           $text-color !default;
+// $pagination-link-bg:              $white !default;
+// $pagination-link-border:          $input-border !default;
 
 $pagination-link-hover-color:     $link-hover-color !default;
 $pagination-link-hover-bg:        rgba($black, .05) !default;
-$pagination-link-hover-border:    $pagination-link-border !default;
+// $pagination-link-hover-border:    $pagination-link-border !default;
 
 $pagination-link-active-color:    $white !default;
 $pagination-link-active-bg:       $brand !default;
 $pagination-link-active-border:   $pagination-link-active-bg !default;
 
-$pagination-link-disabled-color:  $gray-light !default;
-$pagination-link-disabled-bg:     $white !default;
-$pagination-link-disabled-border: lighten($gray-light, 10%) !default;
+// $pagination-link-disabled-color:  $gray-light !default;
+// $pagination-link-disabled-bg:     $white !default;
+// $pagination-link-disabled-border: lighten($gray-light, 10%) !default;
 
 
 
@@ -859,8 +867,8 @@ $timeline-padding: 20px !default;
 $timeline-border-radius: $border-radius-base !default;
 $timeline-line-color: $brand-light !default;
 $timeline-label-color: $white !default;
-$timeline-label-bgcolor: $brand-light !default;
+$timeline-label-bgcolor: $timeline-line-color !default;
 $timeline-card-offset: 24px !default;
-$timeline-date-color: $brand-light !default;
+$timeline-date-color: $timeline-line-color !default;
 $timeline-date-bgcolor: $white !default;
-$timeline-date-border: $brand-light !default;
+$timeline-date-border: $timeline-line-color !default;
