@@ -1851,7 +1851,7 @@ table td[class*="col-"], table th[class*="col-"] {
     border: 1px solid #bbb;
     margin-bottom: 1.07143rem ;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-overflow-style: scrollbar;
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%; }
@@ -1876,7 +1876,7 @@ table td[class*="col-"], table th[class*="col-"] {
   border: 1px solid #bbb;
   margin-bottom: 1.07143rem ;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-overflow-style: scrollbar;
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%; }
@@ -3894,16 +3894,16 @@ a.filter-bar-link-external {
       background-color: #bcc5ee; }
     .table-interactive-options .is-selectable label {
       display: block; }
-      .table-interactive-options .is-selectable label span {
+      .table-interactive-options .is-selectable label > span {
         display: block;
         margin: -0.14286rem -0.28571rem 0rem -0.42857rem ;
         padding: 0.14286rem 0.42857rem 0.14286rem 0.42857rem ; }
-  .table-interactive-options .is-draggable:hover label span {
+  .table-interactive-options .is-draggable:hover label > span {
     cursor: -webkit-grab;
     cursor: grab; }
   .table-interactive-options .is-draggable:not(.selected):hover {
     background-color: rgba(0, 0, 0, 0.05); }
-  .table-interactive-options .is-draggable:active label span {
+  .table-interactive-options .is-draggable:active label > span {
     cursor: -webkit-grabbing;
     cursor: grabbing; }
   .table-interactive-options .draggable-placeholder > div {
