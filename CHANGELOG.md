@@ -16,6 +16,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.10.0] - 2015-12-18
+
+### Added
+- Added a clear button in the timepicker
+- Added larger margin helper classes
+- Added an option for a compacter timeline
+
+### Changed
+- Completely revamped the timeline
+- Removed margins from callouts, cards and breadcrumbs
+
+### Fixed
+- Fixed a bug where all modal content would become selected when clicked inside the modal dialog
+- Fixed the pagination view on mobile
+
+
+
 ## [1.9.2] - 2015-11-25
 
 ### Fixed
