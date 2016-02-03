@@ -16,6 +16,24 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.12.0] - 2016-02-03
+
+### Added
+- Upgraded the bar component to also work with divs
+- Added small margin classes
+
+### Changed
+- Updated the appearance of cards and accordions
+- Updated the appearance of tabs
+
+### Fixed
+- Fixed more specificity problems with buttons
+- Fixed a broken loader when Tink was minified for a second time (by external minifiers)
+- Fixed inline CSS in the datepicker
+- Fixed a <select> padding hack
+
+
+
 ## [1.11.1] - 2016-01-25
 
 ### Fixed
